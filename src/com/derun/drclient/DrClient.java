@@ -9,6 +9,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JWindow;
 
+/**
+ * Java¿Í»§¶Ë³ÌÐò
+ * @author wbzhao
+ *
+ */
 public class DrClient extends JWindow {
 	
 	private static final long serialVersionUID = 1L;
@@ -28,5 +33,9 @@ public class DrClient extends JWindow {
         screenSize = null; 
         labelSize = null; 
     } 
+	
+	public static void main(String[] args) {
+		
+	}
 
 }
