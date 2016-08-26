@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.derun.webservice.client.wtmdcxf.AnyType2AnyTypeMap;
-import com.derun.webservice.client.wtmdcxf.QuesListUpdateReqInfo;
-import com.derun.webservice.client.wtmdcxf.QuesListUpdateResInfo;
-import com.derun.webservice.client.wtmdcxf.QuesListUpdateService;
-import com.derun.webservice.client.wtmdcxf.QuesListUpdateServicePortType;
+import com.derun.webservice.client.cxf.AnyType2AnyTypeMap;
+import com.derun.webservice.client.cxf.QuesListUpdateReqInfo;
+import com.derun.webservice.client.cxf.QuesListUpdateResInfo;
+import com.derun.webservice.client.cxf.QuesListUpdateService;
+import com.derun.webservice.client.cxf.QuesListUpdateServicePortType;
 
 
 public class WtmdCxfClient {
@@ -64,25 +64,28 @@ public class WtmdCxfClient {
 		QuesListUpdateReqInfo in0 = new QuesListUpdateReqInfo();
 		in0.setDownloadSerialNo("2016082418383133800003");
 		
-//		AnyType2AnyTypeMap errMap = new AnyType2AnyTypeMap();
-//		List<AnyType2AnyTypeMap.Entry> entry = errMap.getEntry();
-//		AnyType2AnyTypeMap.Entry e = new com.derun.webservice.client.wtmdcxf.AnyType2AnyTypeMap.Entry();
-//		e.setKey("2016082418383133800004");
+		AnyType2AnyTypeMap errMap = new AnyType2AnyTypeMap();
+		List<AnyType2AnyTypeMap.Entry> entry = errMap.getEntry();
+		AnyType2AnyTypeMap.Entry e = new com.derun.webservice.client.cxf.AnyType2AnyTypeMap.Entry();
+		e.setKey("2016082418383133800004");
 //		List<String> errList = new ArrayList<String>();
 //		errList.add("第1列错误");
 //		errList.add("第2列错误");
-//		e.setValue(errList);
-//		entry.add(e);
+		e.setValue(new String[]{"err1","err2"});
+		entry.add(e);
 		
-		HashMap<String, List<String>> errMap = new HashMap<String, List<String>>();
-		List<String> errList = new ArrayList<String>();
-		errList.add("第1列错误");
+//		HashMap<String, List<String>> errMap = new HashMap<String, List<String>>();
+//		List<String> errList = new ArrayList<String>();
+//		errList.add("第1列错误");
 //		errList.add("第2列错误");
-		errMap.put("2016082418383133800003", errList);
-		AnyType2AnyTypeMap map = MapToAnyMap(errMap);
+//		String[] errArray = new String[2];
+//		errArray[0]="第1列错误";
+//		errArray[1]="第2列错误";
+//		errMap.put("140004335359", errList);
+//		AnyType2AnyTypeMap map = MapToAnyMap(errMap);
 		
 		
-		in0.setErrMap(map);
+		in0.setErrMap(errMap);
 		in0.setReqStyle("0"); //0-反馈错误数据  1-请求下载
 		in0.setPageSize(1);
 		in0.setPassword("123456");
@@ -123,7 +126,7 @@ public class WtmdCxfClient {
 		Map map = new HashMap();
 		Iterator itt = at2am.getEntry().iterator();
 		while (itt.hasNext()) {
-			AnyType2AnyTypeMap.Entry entry = (com.derun.webservice.client.wtmdcxf.AnyType2AnyTypeMap.Entry) itt.next();
+			AnyType2AnyTypeMap.Entry entry = (com.derun.webservice.client.cxf.AnyType2AnyTypeMap.Entry) itt.next();
 			map.put(entry.getKey().toString(), entry.getValue());
 		}
 		return map;
