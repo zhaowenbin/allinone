@@ -67,23 +67,9 @@ public class WtmdCxfClient {
 		AnyType2AnyTypeMap errMap = new AnyType2AnyTypeMap();
 		List<AnyType2AnyTypeMap.Entry> entry = errMap.getEntry();
 		AnyType2AnyTypeMap.Entry e = new com.derun.webservice.client.cxf.AnyType2AnyTypeMap.Entry();
-		e.setKey("2016082418383133800004");
-//		List<String> errList = new ArrayList<String>();
-//		errList.add("第1列错误");
-//		errList.add("第2列错误");
-		e.setValue(new String[]{"err1","err2"});
+		e.setKey("140004335359-2013");
+		e.setValue("错误信息");
 		entry.add(e);
-		
-//		HashMap<String, List<String>> errMap = new HashMap<String, List<String>>();
-//		List<String> errList = new ArrayList<String>();
-//		errList.add("第1列错误");
-//		errList.add("第2列错误");
-//		String[] errArray = new String[2];
-//		errArray[0]="第1列错误";
-//		errArray[1]="第2列错误";
-//		errMap.put("140004335359", errList);
-//		AnyType2AnyTypeMap map = MapToAnyMap(errMap);
-		
 		
 		in0.setErrMap(errMap);
 		in0.setReqStyle("0"); //0-反馈错误数据  1-请求下载

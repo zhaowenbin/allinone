@@ -9,7 +9,7 @@ public class LogUtil {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String logFilePath = "D:\\ccslog\\201601\\ccslog.2016-01-04";
+		String logFilePath = "C:\\Users\\Administrator\\Desktop\\server_4.log";
 		//String logFilePath = "C:\\Users\\Administrator\\Desktop\\ccslog.2016-04-26";
 		scanLog(logFilePath);
 	}
@@ -18,7 +18,7 @@ public class LogUtil {
 		try {
 			int maxCost = 0;
 			String maxLine = "";
-			String encoding = "UTF8";
+			String encoding = "GBK";
 			File file = new File(logFilePath);
 			if (file.isFile() && file.exists()) { // 判断文件是否存在
 				InputStreamReader read = new InputStreamReader(
